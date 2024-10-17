@@ -18,6 +18,89 @@ body {
     background-color: #000000;
 }
 
+.loading {
+    background-color: #dbdbdb;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    z-index: 100;
+    top: 0;
+    display: flex;
+    align-items: center;
+    padding: 100px 0px;
+    flex-direction: column-reverse;
+    overflow: hidden;
+}
+
+.loading.none {
+    display: none;
+}
+
+.counter {
+    font-family: 'Space Mono', monospace;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%;
+    text-transform: capitalize;
+    color: #484848;
+    cursor: pointer;
+    position: absolute;
+    bottom: 10%;
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    top: 30%;
+}
+
+.circle {
+    background-color: #000;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    perspective: 100px;
+}
+
+.circle.while {
+    animation: circle 0.7s cubic-bezier(0.1, 0.8, 0.7, 1) infinite;
+}
+
+@keyframes circle {
+    0% {
+        transform: translateY(10px) rotateX(50deg);
+    }
+
+    50% {
+        transform: translateY(-50px) rotateX(0deg);
+    }
+
+    100% {
+        transform: translateY(10px) rotateX(50deg);
+    }
+}
+
+.circle.after {
+    transform: translateY(-50px) rotateX(0deg);
+    animation: none;
+}
+
+.circle.box {
+    transition: 0.5s;
+    transform: scale(100);
+}
+
+.line {
+    width: 60px;
+    height: 7px;
+    background-color: #000;
+    border-radius: 5px;
+}
+
 .header {
     padding: 20px 10px;
     background-color: #000000;
